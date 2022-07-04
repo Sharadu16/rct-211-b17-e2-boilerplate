@@ -1,8 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
+const mainDiv = {
+   display : "flex",
+   justifyContent : "space-between",
+   padding : "20px 40px"
+}
+
+const btn = {
+  backgroundColor : "black",
+  color : "#FFF"
+}
 const Navbar = () => {
   return (
-    <div>
+    <div style={mainDiv}>
       <div data-cy="navbar-home-link">
         <img
           src="/Adidas_Logo.png"
@@ -14,7 +25,7 @@ const Navbar = () => {
 
       <div>
         {/* Link button to /login page, if the user is not authenticated, else don't show it*/}
-        <button data-cy="navbar-login-button">LOGIN</button>
+        <Link to="/Login"><button style={btn} data-cy="navbar-login-button">LOGIN</button></Link>
       </div>
     </div>
   );
